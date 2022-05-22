@@ -2,14 +2,22 @@ calculation_to_unit = 24
 name_of_unit = 'hours'
 
 def days_to_units(number_of_days):
-    if number_of_days > 0:
-        return f'{number_of_days} days are {number_of_days * calculation_to_unit} {name_of_unit}'
+    return f'{number_of_days} days are {number_of_days * calculation_to_unit} {name_of_unit}'
+
+
+def validate_and_execute():
+    if input_value.isdigit():
+        input_value_number = int(input_value)
+        if input_value_number > 0:
+            calculated_value = days_to_units(int(input_value))
+            print(calculated_value)
+        elif input_value_number == 0:
+            print('You entered a 0, enter a valid value')
     else:
-        return 'You entered a negative value'
+        print('Your input isn\'t a number. Don\'t ruin my program')
+
+
 input_value = input('Hey, enter some value here\n')
 # input() the value always be string type
+validate_and_execute()
 
-calculated_value = days_to_units(int(input_value))
-# if want to pass the integer value convert str to int
-
-print(calculated_value)
