@@ -1,4 +1,3 @@
-print('This is string')
 print(20)
 print(6.18)
 
